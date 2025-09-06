@@ -1,0 +1,235 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f3ff;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(90deg, #007bff, #00c4b4);
+    color: white;
+    padding: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    max-width: 150px;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+main {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 1.5em;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease-in-out;
+}
+
+#login-container, #signup-container, #quiz-list-container, #quiz-container {
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#login-container.active, #signup-container.active, #quiz-list-container.active, #quiz-container.active {
+    opacity: 1;
+}
+
+.form-group {
+    margin: 1em 0;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.form-group input {
+    width: 80%;
+    max-width: 400px;
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #ffc107;
+    outline: none;
+}
+
+#login-button, #signup-button, #next-button {
+    padding: 0.8em 2.5em;
+    font-size: 1.1em;
+    cursor: pointer;
+    background: linear-gradient(90deg, #ffc107, #ffca28);
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+#login-button:hover, #signup-button:hover, #next-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #e0a800, #f1c40f);
+}
+
+#login-button:disabled, #signup-button:disabled, #next-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#quiz-list {
+    list-style: none;
+    padding: 0;
+}
+
+#quiz-list li {
+    margin: 0.8em 0;
+}
+
+#quiz-list a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.3em;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+#quiz-list a:hover {
+    color: #ffc107;
+}
+
+#quiz-title {
+    color: #007bff;
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+#question {
+    font-size: 1.6em;
+    margin-bottom: 1.2em;
+    color: #333;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+#options button {
+    display: block;
+    width: 85%;
+    margin: 0.6em auto;
+    padding: 0.8em;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(90deg, #007bff, #00c4b4);
+    color: white;
+    border-radius: 8px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+#options button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #0056b3, #009688);
+}
+
+#options button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#explanation {
+    margin: 1.2em 0;
+    font-size: 1.1em;
+    padding: 1em;
+    border-radius: 8px;
+}
+
+#explanation.correct {
+    background: #d4edda;
+    color: #155724;
+}
+
+#explanation.incorrect {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+#image img {
+    max-width: 350px;
+    margin: 1.2em 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1em;
+    }
+
+    .logo {
+        margin-bottom: 1em;
+    }
+
+    main {
+        margin: 1em;
+        padding: 1em;
+    }
+
+    .form-group input {
+        width: 90%;
+    }
+
+    #options button {
+        width: 95%;
+    }
+
+    #image img {
+        max-width: 100%;
+    }
+}

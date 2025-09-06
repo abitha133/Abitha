@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Quiz Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="medical.jpeg" alt="Medical Quiz Logo" class="logo">
+        <h1>Abitha Quiz Hub</h1>
+        <nav>
+            <a href="#" id="auth-link" aria-label="Login or Logout">Login</a>
+        </nav>
+    </header>
+    <main id="main-content">
+        <div id="login-container" style="display: none;">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Username:</label>
+                    <input type="text" id="login-username" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" required aria-required="true">
+                </div>
+                <button type="button" id="login-button">Login</button>
+            </form>
+            <p><a href="#" id="show-signup-link">Don't have an account? Sign Up</a></p>
+        </div>
+        <div id="signup-container" style="display: none;">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-username">Username:</label>
+                    <input type="text" id="signup-username" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" required aria-required="true">
+                </div>
+                <button type="button" id="signup-button">Sign Up</button>
+            </form>
+            <p><a href="#" id="show-login-link">Already have an account? Login</a></p>
+        </div>
+        <div id="quiz-list-container" style="display: none;">
+            <h2>Available Quizzes</h2>
+            <ul id="quiz-list"></ul>
+        </div>
+        <div id="quiz-container" style="display: none;">
+            <h2 id="quiz-title"></h2>
+            <div id="question"></div>
+            <div id="options"></div>
+            <div id="explanation"></div>
+            <div id="image"></div>
+            <button type="button" id="next-button" disabled>Next</button>
+        </div>
+    </main>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
